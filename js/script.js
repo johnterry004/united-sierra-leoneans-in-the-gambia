@@ -42,15 +42,29 @@ window.addEventListener("scroll", () => {
   } else {
     document.querySelector("header").classList.remove("header-active");
   }
+// Scroll up button
+const scrollUpBtn = document.querySelector(".scrollUp-btn");
 
-  // Scroll up button
-  const scrollUpBtn = document.querySelector(".scrollUp-btn");
+window.addEventListener("scroll", () => {
+  const scrollY = window.pageYOffset;
 
   if (scrollY > 250) {
     scrollUpBtn.classList.add("scrollUpBtn-active");
   } else {
     scrollUpBtn.classList.remove("scrollUpBtn-active");
   }
+});
+
+// Scroll to top when arrow clicked
+if (scrollUpBtn) {
+  scrollUpBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
+
 
   // Nav link indicator
 
@@ -91,3 +105,4 @@ sr.reveal(
 
 sr.reveal(`.about-imageContent, .menu-items`, { origin: "left" });
 sr.reveal(`.about-details, .time-table`, { origin: "right" });
+
