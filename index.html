@@ -25,6 +25,7 @@
 <body>
         <!-- Header -->
         <header class="header">
+                
                 <nav class="nav container flex">
                         <a href="#" class="logo-content flex">
                                 <i class='bx bx-group logo-icon'></i>
@@ -34,11 +35,11 @@
                         <div class="menu-content">
                                 <ul class="menu-list flex">
                                         <li><a href="#Home" class="nav-link active-navlink">Home</a></li>
-                                        <li><a href="#About Us" class="nav-link">About Us</a></li>
-                                        <li><a href="#Our Activity" class="nav-link">Our Activity</a></li>
+                                        <li><a href="#About Us" class="nav-link">About</a></li>
+                                        <li><a href="#Our Activity" class="nav-link">Activity</a></li>
                                         <li><a href="#Executives Members" class="nav-link">Executives Members</a></li>
-                                        <li><a href="#Our Gallery" class="nav-link">Our Gallery</a></li>
-                                        <li><a href="#Contact Us" class="nav-link">Contact Us</a></li>
+                                        <li><a href="#Our Gallery" class="nav-link">Gallery</a></li>
+                                        <li><a href="#Contact Us" class="nav-link">Contact</a></li>
                                         <li><a href="#Working Hours" class="nav-link">Working Hours</a></li>
                                 </ul>
 
@@ -58,10 +59,14 @@
 
                                 <span style="color: rgb(255, 5, 5); font-size: 20px;">
                                         USLG</span>
+                                        
                         </div>
-
+                             <!-- Donate Button -->
+                        <button id="donateBtn" class="donate-button">DONATE</button>
+                    
                         <i class='bx bx-menu navOpen-btn'></i>
                 </nav>
+                
 
         </header>
 
@@ -89,8 +94,7 @@
                                                                         </h2>
                                                                 </div>
 
-                                                                <button class="button"> <a
-                                                                                href="#Our Activity">Explore</a></button>
+                                                                <a style="color: white; font-size: 20px;"  href="#Our Activity"> <button class="button" >Explore</a></button>
                                                         </div>
                                                 </div>
 
@@ -106,8 +110,8 @@
                                                                                 community and preserve our heritage.”
                                                                         </h2>
                                                                 </div>
-
-                                                                <button class="#Our Activity">Explore</button>
+                                                                         <a style="color: white; font-size: 20px;"  href="#Our Activity"> <button class="button" >Explore</a></button>
+                                                          
                                                         </div>
                                                 </div>
 
@@ -126,8 +130,8 @@
                                                                                 growth, learning, and togetherness.”
                                                                         </h2>
                                                                 </div>
-
-                                                                <button class="#Our Activity">Explore</button>
+                                                                           <a style="color: white; font-size: 20px;"  href="#Our Activity"> <button class="button" >Explore</a></button>
+                                                               
                                                         </div>
                                                 </div>
                                         </div>
@@ -186,14 +190,7 @@
 
                                         </div>
 
-                                        <div class="about-buttons flex">
-                                                <button class="button">
-                                                        <a href="#about us" class="about-link flex">
-                                                                <span class="link-text">Read More</span>
-                                                                <i class='bx bx-right-arrow-alt about-arrowIcon'></i>
-                                                        </a>
-                                                </button>
-                                        </div>
+                                    
                                 </div>
 
                         </div>
@@ -985,12 +982,42 @@
                 </a>
 
         </main>
+<!-- Donate Popup -->
+<div id="donatePopup" class="donate-popup">
+  <div class="donate-content">
+    <span id="closeDonate" class="close-btn">&times;</span>
+    <h2>Support Our Union</h2>
+    <p>Your donation helps us continue our community services and activities. 🙏</p>
+
+    <!-- PayPal Donate -->
+    <a href="https://www.paypal.com/myaccount/summary?intl=0" target="_blank" class="donate-submit">
+      Donate via PayPal
+    </a>
+<p>OR</p>
+    <a  href="wave://send?recipient=+2202004699&amount=" class="donate-submit"target="_blank" class="donate-submit">
+  Donate via Wave
+</a>
+<p>If it doesn’t open, please send your donation manually through the Wave app to <strong>+2202004699</strong>.</p>
+
+<p>OR</p>
+<!-- Bank Info -->
+    <div class="bank-details">
+      <h3>Bank Transfer</h3>
+      <p>
+        <strong>Account Name:</strong> United Sierra Leoneans in The Gambia <br>
+        <strong>Bank:</strong> Trust Bank Gambia <br>
+        <strong>Account Number:</strong> 11281339701
+        
+      </p>
+    </div>
+  </div>
+</div>
 
         <!-- Swiper JS -->
         <script src="js/swiper-bundle.min.js"></script>
 
         <!-- Scroll Reveal -->
-        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="js/scrollreveal.js"></script>
 
         <!-- JavaScript -->
         <script src="js/script.js"></script>
@@ -1048,7 +1075,21 @@
                         }
                 });
         </script>
-</body>
+                        <!-- JavaScript -->
+                        <script>
+                        document.getElementById("donateBtn").onclick = function() {
+                        document.getElementById("donatePopup").style.display = "block";
+                        }
+                        document.getElementById("closeDonate").onclick = function() {
+                        document.getElementById("donatePopup").style.display = "none";
+                        }
+                        window.onclick = function(event) {
+                        if (event.target == document.getElementById("donatePopup")) {
+                        document.getElementById("donatePopup").style.display = "none";
+                        }
+                        }
+                        </script>
 
+</body>
 
 </html>
